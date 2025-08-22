@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="board.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="search-box">
+        <input class="search-input" type="search" placeholder="Search..." />
+      </div>
+      <div class="account">
+        <div class="notification">
+          <i class="bx bx-bell"></i>
+        </div>
+        <div><i class="bx bx-user-circle"></i></div>
+        <div class="name-box">
+          <p class="user-name"></p>
+
+          <div class="dropdown">
+            <button class="user">Account</button>
+            <button class="logout-btn">Log out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="side-menu">
+      <div class="name-website">
+        <p>Owlhelper</p>
+      </div>
+
+      <div class="menu">
+        <div id="overview">
+          <button class="overview-btn">
+            <img src="../image/icons8-web-design-50.png" /> Overview
+          </button>
+        </div>
+        <div id="calendar">
+          <button class="calendar">
+            <img src="../image/icons8-timeline-week-50 (1).png" /> Calendar
+          </button>
+        </div>
+        <div id="setting">
+          <button class="setting-btn">
+            <img src="../image/icons8-setting-50.png" /> Setting
+          </button>
+        </div>
+      </div>
+
+      <hr class="line-menu" />
+
+      <div class="sub-menu">
+        <div class="tags-column"><h3>TAG</h3></div>
+        <div id="personal">
+          <button class="personal-btn">
+            <img src="../image/icons8-folder-50.png" /> Personal
+          </button>
+        </div>
+        <div id="group">
+          <button class="group-btn">
+            <img src="../image/icons8-folder-50.png" /> Group
+          </button>
+        </div>
+      </div>
+
+      <div class="light-dark-mode">
+        <button class="dark-mode">
+          <img src="../image/icons8-moon-and-stars-50.png" />
+        </button>
+        <button class="light-mode-mode">
+          <img src="../image/icons8-sun-50.png" />
+        </button>
+      </div>
+    </div>
+
+    <div class="tasks">
+      <div class="task-header">
+        <div class="create-task">
+          <h2>Create a new task</h2>
+          <input type="text" class="task-input" placeholder="Task name" />
+          <input type="date" class="start-date" />
+          <input type="date" class="end-date" />
+          <select class="task-priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium!!</option>
+            <option value="high">High!!!</option>
+          </select>
+          <select class="task-status">
+            <option value="todo">To do</option>
+            <option value="in_progress">In progress</option>
+            <option value="done">Done</option>
+          </select>
+          <textarea
+            class="task-description"
+            placeholder="Task description"
+          ></textarea>
+          <input
+            type="text"
+            class="task-tags"
+            placeholder="Tags (comma separated)"
+          />
+          <button class="add-task-btn">Add Task</button>
+        </div>
+
+        <div class="quote">
+          <h2>Quote of the day</h2>
+          <div class="quote-text">
+            <p>"The only way to do great work is to love what you do."</p>
+            <p>- Steve Jobs</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="today-tasks">
+        <h2>Today's tasks</h2>
+        <hr />
+        <div class="recent-task-list"></div>
+      </div>
+
+      <div class="upcoming-tasks">
+        <h2>Upcoming tasks</h2>
+        <hr />
+        <div class="upcoming-task-list"></div>
+      </div>
+
+      <div class="completed-tasks">
+        <h2>Completed tasks</h2>
+        <hr />
+        <div class="completed-task-list"></div>
+      </div>
+    </div>
+
+    <div id="taskDetail" class="detail" style="display: none;">
+      <div class="detail-content">
+        <span id="closeModal">&times;</span>
+        <h2>DETAIL AND EDIT TASK</h2>
+
+        <form id="editForm">
+          <input type="hidden" id="edit-id">
+    
+          <label>Title:</label>
+          <input type="text" id="edit-title" required><br><br>
+
+          <label>Start Date:</label>
+          <input type="date" id="edit-start-date" required><br><br>
+
+          <label>End Date:</label>
+          <input type="date" id="edit-end-date" required><br><br>
+    
+          <label>Status:</label>
+          <select id="edit-status">
+            <option value="todo">To Do</option>
+            <option value="in_progress">In Progress</option>
+            <option value="done">Done</option>
+          </select><br><br>
+
+          <label>Priority:</label>
+          <select id="edit-priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select><br><br>
+
+          <label>Description:</label>
+          <textarea id="edit-desc"></textarea><br><br>
+
+          <label>Tags:</label>
+          <input type="text" id="edit-tags" placeholder="Tags (comma separated)"><br><br>
+    
+          <button type="submit">Save Changes</button>
+        </form>
+
+      </div>
+    </div>
+
+    <script src="board.js"></script>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px 20px 300px;
+}
+
+.search-box input {
+  border-radius: 18px;
+  border: 1px solid rgb(207, 207, 207);
+  padding: 10px;
+  width: 500px;
+}
+
+.account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+.account i {
+  font-size: 25px;
+  color: #3a5c0d;
+}
+
+.name-box {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: #566246;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 20px;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  padding: 10px;
+  width: 120px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(5px);
+  transition: all 0.3s ease;
+}
+.name-box:hover .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.dropdown button {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: grey;
+  border: none;
+  padding: 8px 12px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.dropdown button:hover {
+  background-color: #a4c2a5;
+  color: #566246;
+}
+
+#side-menu {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  padding: 30px 0 0 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.name-website {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #4e7410;
+}
+.menu button,
+.sub-menu button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  margin-top: 18px;
+  padding: 6px;
+  font-size: 16px;
+  width: 155px;
+  color: grey;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.menu button:hover,
+.sub-menu button:hover {
+  background-color: #a4c2a5;
+  color: #4e7410;
+  border: none;
+  border-radius: 20px;
+}
+.menu button img,
+.sub-menu button img,
+.light-dark-mode img {
+  width: 35px;
+  height: 35px;
+}
+
+.line-menu {
+  width: 80%;
+  height: 1px;
+  background-color: rgb(248, 242, 222);
+}
+
+.light-dark-mode {
+  display: flex;
+  margin-top: 200px;
+  gap: 10px;
+  padding: 10px;
+}
+.light-dark-mode button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: grey;
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+.light-dark-mode button:hover {
+  transform: translateY(-10px);
+}
+
+
+/* Khi ấn dark-mode */
+body.dark-mode {
+  background-color: #313131;
+}
+body.dark-mode .dropdown,
+body.dark-mode .main-content {
+  background-color: rgb(102, 102, 102);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode button{
+  color: rgb(195, 195, 195);
+}
+body.dark-mode .menu button:hover, 
+body.dark-mode .sub-menu button:hover {
+  background-color: #a4c2a5;
+  color: #4e7410;
+}
+body.dark-mode h2, 
+body.dark-mode .name-website p,
+body.dark-mode .user-name,
+body.dark-mode i, 
+body.dark-mode h1,
+body.dark-mode h3 {
+  color: rgb(159, 184, 155);
+}
+body.dark-mode .event-form label {
+  color: #e4f4e4; 
+}
+
+
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  margin: 35px 50px 0 300px;
+  gap: 20px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 1000px;
+  transition: transform 0.3s ease;
+}
+.calendar-header h1 {
+  font-size: 2.5em;
+  /* color: #333; */
+  margin-bottom: 20px;
+}
+.event-form {
+  margin: 20px 0;
+}
+.event-form form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+.event-form label {
+  font-weight: 600;
+  color: #417542b9;
+  margin: 5px; 
+}
+.event-form input {
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+.event-form button {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+  color: rgb(197, 197, 197);
+  cursor: pointer;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.event-form button:hover {
+  background-color: #a4c2a5;
+  color: white;
+}
+
+
+/* CSS cho lịch FullCalendar */
+/* Nút "Today" */
+.fc-today-button {
+  background-color: #456e0eae !important;
+  border-color: var(--gd-medium-grey) !important;
+  color: white !important;
+  border-radius: 20px !important; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--gd-subtle-border) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  padding: 8px 12px !important;
+  width: 90px !important;
+}
+.fc-today-button:hover {
+  background-color: #555 !important;
+  border-color: #555 !important;
+}
+
+/* Nút đã được chọn (ví dụ: "month" khi đang ở chế độ tháng) */
+.fc-button-primary.fc-button-active {
+  background-color: #456e0eae !important; 
+  color: var(--gd-dark-bg) !important; 
+  border-color: var(--gd-light-text) !important;
+  text-decoration: underline !important;
+}
+
+/* Nút điều hướng (prev/next) trong nhóm */
+.fc-button-group .fc-button {
+  background-color: transparent !important;
+  color: var(--gd-light-text) !important; 
+  border: 1px solid var(--gd-subtle-border) !important;
+  border-radius: 8px !important; 
+  padding: 8px 10px !important;
+  box-shadow: none !important; 
+}
+.fc-button-group .fc-button:hover {
+  background-color: var(--gd-subtle-border) !important; 
+  color: var(--gd-accent-purple) !important; 
+}
+
+/* Đặc biệt cho các nút bị vô hiệu hóa (disabled) */
+.fc-button-primary:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}

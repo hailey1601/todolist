@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendar</title>
+    <link rel="stylesheet" href="calen.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="search-box">
+        <input class="search-input" type="search" placeholder="Search..." />
+      </div>
+      <div class="account">
+        <div class="notification">
+          <i class="bx bx-bell"></i>
+        </div>
+        <div><i class="bx bx-user-circle"></i></div>
+        <div class="name-box">
+          <p class="user-name"></p>
+
+          <div class="dropdown">
+            <button class="user">Account</button>
+            <button class="logout-btn" onclick="logout()">Log out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div id="side-menu">
+      <div class="name-website">
+        <p>Owlhelper</p>
+      </div>
+
+      <div class="menu">
+        <div id="overview">
+          <button class="overview-btn">
+            <img src="../image/icons8-web-design-50.png" /> Overview
+          </button>
+        </div>
+        <div id="calendar">
+          <button class="calendar-btn">
+            <img src="../image/icons8-timeline-week-50 (1).png" /> Calendar
+          </button>
+        </div>
+        <div id="setting">
+          <button class="setting-btn">
+            <img src="../image/icons8-setting-50.png" /> Setting
+          </button>
+        </div>
+      </div>
+      <hr class="line-menu" />
+      <div class="sub-menu">
+        <div class="tags-column"><h3>TAG</h3></div>
+        <div id="personal">
+          <button class="personal-btn">
+            <img src="../image/icons8-folder-50.png" /> Personal
+          </button>
+        </div>
+        <div id="group">
+          <button class="group-btn">
+            <img src="../image/icons8-folder-50.png" /> Group
+          </button>
+        </div>
+      </div>
+      <div class="light-dark-mode">
+        <button class="dark-mode">
+          <img src="../image/icons8-moon-and-stars-50.png" />
+        </button>
+        <button class="light-mode-mode">
+          <img src="../image/icons8-sun-50.png" />
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="calendar-header">
+        <h1>Calendar</h1>
+        <div class="event-form" id="event-form">
+            <form id="eventForm">
+              <div class="title-form">
+                <label for="eventTitle">Title:</label>
+                <input type="text" id="eventTitle" name="title" required />
+              </div>
+              <div class="date-time-form">
+                <label for="eventDate">Date:</label>
+                <input type="date" id="eventDate" name="date" required />
+
+                <label for="eventTime">Time:</label>
+                <input type="time" id="eventTime" name="time" required />
+              </div>
+              <div class="function-button">
+                <button type="submit">Add Event</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+              </div>
+            </form>
+        </div>
+      </div>
+      <div class="calendar-container">
+        <div id="calendar-detail"></div>
+        <script src="calen.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+      </div>
+    </div>
+  </body>
+</html>
